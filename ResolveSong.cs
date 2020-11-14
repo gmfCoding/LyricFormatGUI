@@ -118,17 +118,17 @@ namespace LyricFormatt
             {
                 if (lyrics && lyricLines.ContainsKey(i))
                 {
-                    sb.AppendLine(lyricLines[i]);
+                    sb.Append(lyricLines[i]);
                 }
 
                 if (chords && chordLines.ContainsKey(i))
                 {
-                    sb.AppendLine(chordLines[i]);
+                    sb.Append(chordLines[i]);
                 }
 
                 if (unknowns && unknownLines.ContainsKey(i))
                 {
-                    sb.AppendLine(unknownLines[i]);
+                    sb.Append(unknownLines[i]);
                 }
 
             }
