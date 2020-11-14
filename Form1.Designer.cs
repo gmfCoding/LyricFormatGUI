@@ -43,7 +43,7 @@
             this.rtb_output.AccessibleName = "rtb_output";
             this.rtb_output.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.rtb_output.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtb_output.Cursor = System.Windows.Forms.Cursors.No;
+            this.rtb_output.Cursor = System.Windows.Forms.Cursors.Hand;
             this.rtb_output.EnableAutoDragDrop = true;
             this.rtb_output.Font = new System.Drawing.Font("NSimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtb_output.Location = new System.Drawing.Point(12, 12);

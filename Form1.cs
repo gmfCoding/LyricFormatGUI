@@ -28,20 +28,23 @@ namespace LyricFormatGUI
         private void Form1_Load(object sender, EventArgs e)
         {
             rtb = (RichTextBox)this.Controls.Find("rtb_output", true)[0];
+            rtb.Enabled = true;
+            rtb.ReadOnly = true;
 
-            if (File.Exists(@"D:\Projects\Software\Source\LyricFormatt\bin\Debug\Songs\1.txt"))
-            {
-                AddSong(new ResolveSong(File.ReadAllLines(@"D:\Projects\Software\Source\LyricFormatt\bin\Debug\Songs\1.txt")));
-            }
+            //if (File.Exists(@"D:\Projects\Software\Source\LyricFormatt\bin\Debug\Songs\1.txt"))
+            //{
+            //    AddSong(new ResolveSong(File.ReadAllLines(@"D:\Projects\Software\Source\LyricFormatt\bin\Debug\Songs\1.txt")));
+            //}
 
             
             Console.ReadLine();
         }
-    
+
         //prints to the rich text box
         public void PrintToRTB(ResolveSong rs)
         { 
             rtb.Clear();
+            
             for (int i = 0; i < rs.song.Length; i++)
             {
                 rtb.AppendText(rs.song[i] + '\n');
@@ -72,10 +75,9 @@ namespace LyricFormatGUI
                 rtb.SelectionLength = rs.song[i].Length;
 
                 rtb.SelectionColor = color;
-
-                rtb.SelectionStart = 0;
-                rtb.SelectionLength = 0;
             }
+            rtb.SelectionStart = 0;
+            rtb.SelectionLength = 0;
         }
 
 
@@ -110,7 +112,7 @@ namespace LyricFormatGUI
 
         private void CopyAll(object sender, EventArgs e)
         {
-            Clipboard.SetText(current.SongComplete());
+            Clipboard.SetText(current.GetSong());
         }
 
         public void CopyChords(object sender, EventArgs e)
@@ -170,7 +172,7 @@ namespace LyricFormatGUI
                 rtb.SelectionColor = Color.Green;
             }
 
-            ColorizeRTB(current);
+            //ColorizeRTB(current);
 
         }
 

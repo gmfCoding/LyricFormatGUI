@@ -117,13 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="rtb_output.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="richTextBox1.Text" xml:space="preserve">
     <value>How to use:
 You can drag and drop files into the program or you can use the 'Paste Song' button to copy a song from your clipboard.
+You can click on a text line to manually convert it into a chord/lyric line, which will also allow you to resolve the blue lines into either chord or lyric
 
 Colours:
 Red is a line that contains a chord
 Blue is a line that the program cannot determine if it is a chord or not
-Green is a line that contains lyrics</value>
+Green is a line that contains lyrics
+
+Buttons:
+Copy All: copies the all coloured lines onto clipboard
+Copy Lyrics: Copies only green text onto clipboard
+Copy Lyrics + Unknown: Copies green and blue text onto clipboard
+Copy Chords: Copies only red text onto the clipboard</value>
   </data>
 </root>

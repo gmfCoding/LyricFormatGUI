@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LyricFormatt
 {
-    class ResolveSong
+    public class ResolveSong
     {
         public string[] song;
 
@@ -87,29 +87,53 @@ namespace LyricFormatt
             return -1;
         }
 
-        public void PrintDifferences()
-        {
-            for (int i = 0; i < song.Length; i++)
-            {
-                ConsoleColor color = ConsoleColor.Red;
-                if (lyricLines.ContainsKey(i))
-                {
-                    color = ConsoleColor.Green;
-                }
-                else if (unknownLines.ContainsKey(i))
-                {
-                    color = ConsoleColor.Blue;
-                }
-
-                Console.ForegroundColor = color;
-                Console.WriteLine(song[i]);
-            }
-        }
+  
 
         public ResolveSong(string[] song)
         {
             this.song = song;
             Resolve();
+        }
+
+        public string GetSong()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            for (int i = 0; i < song.Length; i++)
+            {
+                sb.AppendLine(song[i]);
+            }
+            return sb.ToString();
+        }
+
+        public string GetChords() => GetLyrics(false, true, false);
+        public string GetLyrics() => GetLyrics(true, false, false);
+        public string GetUnknown() => GetLyrics(false, false, true);
+
+        public string GetLyricsAndUnknown() => GetLyrics(true, false, true);
+        public string GetLyrics(bool lyrics, bool chords, bool unknowns)
+        {
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < song.Length; i++)
+            {
+                if (lyrics && lyricLines.ContainsKey(i))
+                {
+                    sb.AppendLine(lyricLines[i]);
+                }
+
+                if (chords && chordLines.ContainsKey(i))
+                {
+                    sb.AppendLine(chordLines[i]);
+                }
+
+                if (unknowns && unknownLines.ContainsKey(i))
+                {
+                    sb.AppendLine(unknownLines[i]);
+                }
+
+            }
+
+            return sb.ToString();
         }
     }
 }

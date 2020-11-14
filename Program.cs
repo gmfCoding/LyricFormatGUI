@@ -1,29 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
-namespace LyricFormatt
+namespace LyricFormatGUI
 {
-    class Program
+    static class Program
     {
-        static void Main(string[] args)
+        /// <summary>
+        /// The main entry point for the application.
+        /// </summary>
+        [STAThread]
+        static void Main()
         {
-            string[] current = Song.lines2;
-            ResolveSong rs = new ResolveSong(Song.lines);
-
-            rs.PrintDifferences();
-
-            //Console.ResetColor();
-            //foreach (var index in otherLines)
-            //{
-            //    Console.WriteLine(current[index]);
-            //}
-
-            Console.ReadLine();
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Form1());
         }
-
     }
 }
